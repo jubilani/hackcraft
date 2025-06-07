@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "csm",
+  "version": "${version}",
+  "name": "CSM",
+  "description": "My first attempt at modding! This includes a new item: an End Fragment. It doesn't do anything... yet. Future versions will make this item minable in the Nether.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/csm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.hackctb.csm.client.CsmDataGenerator"
+    ],
+    "client": [
+      "com.hackctb.csm.client.CsmClient"
+    ],
+    "main": [
+      "com.hackctb.csm.Csm"
+    ]
+  },
+  "mixins": [
+    "csm.mixins.json",
+    {
+      "config": "csm.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
